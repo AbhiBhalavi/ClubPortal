@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery - ClubPortal</title>
+  <link rel="stylesheet" href="../club1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .gallery-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 6rem 1rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-grid a img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .gallery-grid a img:hover {
+      transform: scale(1.05);
+    }
+    h1.gallery-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--accent-purple);
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../clubportal.png" alt="ClubPortal Logo">
+      </div>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="club1.html">Clubs</a>
+        <a href="#" class="active">Photo Gallery</a>
+        <a href="#video-gallery">Video Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="gallery-container">
+      <h1 class="gallery-title">Our Moments</h1>
+      <div class="gallery-grid">
+        <a href="pics/innovation-1.jpeg" target="_blank"><img src="pics/innovation-1.jpeg" alt="Gallery Image 1"></a>
+        <a href="pics/innovation-3.jpeg" target="_blank"><img src="pics/innovation-3.jpeg" alt="Gallery Image 2"></a>
+        <a href="pics/innovation-4.jpeg" target="_blank"><img src="pics/innovation-4.jpeg" alt="Gallery Image 3"></a>
+        <a href="pics/event-1.jpg" target="_blank"><img src="pics/event-1.jpg" alt="Gallery Image 4"></a>
+        <a href="pics/event-2.jpg" target="_blank"><img src="pics/event-2.jpg" alt="Gallery Image 5"></a>
+        <a href="pics/event-3.jpg" target="_blank"><img src="pics/event-3.jpg" alt="Gallery Image 6"></a>
+      </div>
+    </div>
+  </main>
+
+  <!-- <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#" class="social-icon" title="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="24" height="24">
+        </a>
+        <a href="#" class="social-icon" title="LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="24" height="24">
+        </a>
+        <a href="#" class="social-icon" title="YouTube">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" width="24" height="24">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 ClubPortal. All rights reserved.</p>
+    </div>
+  </footer> -->
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubPortal - Connect & Create</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="club1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="clubportal.png" alt="ClubPortal Logo">
+            </div>
+            <div class="nav-links">
+                <a href="home.html" class="active">Home</a>
+                <a href="club1.html">Clubs</a>
+                <a href="photo-gallery.html">Photo Gallery</a>
+                <a href="#video-gallery">Video Gallery</a>
+                
+            </div>
+            
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        <span class="connecting">Connecting</span> 
+                        <span class="hash">#</span>
+                    </h1>
+                    <h2>
+                        <span class="college-life">College Life with</span><br>
+                        <span class="young-creators">Clubs</span><br>
+                        <div class="typing-container">
+                            <span class="typing-text"></span>
+                            <span class="typing-cursor">|</span>
+                        </div>
+                    </h2>
+                    <p class="hero-description">
+                        "Explore a vibrant hub where UIT and SOIT Rgpv's clubs, events .Discover a place 
+                        that connects every aspect of campus life, making your journey at the university 
+                        even more enriching. Welcome to the heart of UIT and SOIT Rgpv, where connections 
+                        are made, and experiences are crafted."
+                        
+                    </p>
+                    <!-- <div class="hero-buttons">
+                        <a href="#events" class="primary-btn">See Upcoming Events ...</a>
+                        <a href="#official" class="secondary-btn">Official Site <span class="arrow">↗</span></a>
+                    </div> -->
+                </div>
+                <div class="hero-image">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="swiper1.jpg" alt="Team Collaboration">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="pics\innovation-1.jpeg" alt="Student performing">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="pics\innovation-3.jpeg" alt="Campus Events">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="clubs/jammers1.jpg" alt="Team Collaboration">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="pics\innovation-4.jpeg" alt="Team Collaboration">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="infinity2.jpg" alt="Team Collaboration">
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <img src="soit2.webp" alt="Team Collaboration">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="clubs\soit3.jpg" alt="Team Collaboration">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="social-icon" title="Instagram" aria-label="Follow us on Instagram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="24" height="24">
+                </a>
+                <a href="#" class="social-icon" title="LinkedIn" aria-label="Follow us on LinkedIn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="24" height="24">
+                </a>
+                <a href="#" class="social-icon" title="YouTube" aria-label="Follow us on YouTube">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" width="24" height="24">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ClubPortal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'fade',
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = ["Welcome to ClubPortal", "Discover Amazing Clubs", "Join the Community"];
+            const typingText = document.querySelector('.typing-text');
+            const cursor = document.querySelector('.typing-cursor');
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingDelay = 100;
+            let deletingDelay = 50;
+            let newTextDelay = 2000;
+
+            function type() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingText.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, newTextDelay);
+                    return;
+                }
+
+                if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, typingDelay);
+                    return;
+                }
+
+                setTimeout(type, isDeleting ? deletingDelay : typingDelay);
+            }
+
+            type();
+        });
+    </script>
+</body>
+</html> 
